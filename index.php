@@ -1,5 +1,5 @@
 <?php
-
+  // reference file to connect to database
   include ('config/db_connect.php');
 
   // Write sql (desired query) for all pizzas: 'SELECT column1, column2...FROM table_name'
