@@ -8,19 +8,19 @@
   if (isset($_POST['submit'])) {
     // email check
     if (empty($_POST['email'])) {
-      $errors['email'] = 'An email is required <br />';
+      $errors['email'] = 'An email is required';
     } else {
       // check test with XSS attack protection.
       // echo htmlspecialchars($_POST['email']) . '<br />';
       $email = $_POST['email'];
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'You must include a valid email address <br />';
+        $errors['email'] = 'You must include a valid email address';
       }
     }
 
     // title check
     if (empty($_POST['title'])) {
-      $errors['title'] = 'A title is required <br />';
+      $errors['title'] = 'A title is required';
     } else {
       // check test with XSS attack protection.
       // echo htmlspecialchars($_POST['title']) . '<br />';

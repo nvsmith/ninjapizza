@@ -29,7 +29,7 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <?php include 'templates/header.php'; ?>
+  <?php include('templates/header.php'); ?>
 
   <h4 class="center grey-text">Pizzas</h4>
 
@@ -52,7 +52,7 @@
             </div> <!-- end .card-content -->
 
             <div class="card-action right-align">
-              <a href="#" class="brand-text">More Info</a>
+              <a href="details.php?id=<?php echo $pizza['id']; ?>" class="brand-text">More Info</a>
             </div> <!-- end .card-action -->
           </div> <!-- end .card -->
         </div> <!-- end .col -->
@@ -60,5 +60,5 @@
     </div>
   </div>
 
-  <?php include 'templates/footer.php'; ?>
+  <?php include('templates/footer.php'); ?>
 </html>
