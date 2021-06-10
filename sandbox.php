@@ -19,6 +19,15 @@
   echo $_SERVER['SCRIPT_FILENAME'] . '<br />';
   echo $_SERVER['PHP_SELF'] . '<br />';
 
+  // sessions: persist data across pages
+  if (isset($_POST['submit'])) {
+    session_start();
+
+    $_SESSION['name'] = $_POST['name'];
+
+    header('Location: index.php');
+  }
+
 
 
 
@@ -32,5 +41,11 @@
   </head>
   <body>
     <?php echo $score > 40 ? 'high score' : 'low score'; ?>
+
+    <form class="" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+      <input type="" name="name" value="">
+      <input type="submit" name="submit" value="Submit">
+
+    </form>
   </body>
 </html>
