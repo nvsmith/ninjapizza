@@ -1,7 +1,12 @@
 <?php
   session_start();
 
-  $name = $_SESSION['name'];
+  if ($_SERVER['QUERY_STRING'] == 'noname') {
+    unset($_SESSION['name']);
+  }
+
+  // null coalescing: set default if $_SESSION['name'] == noname.
+  $name = $_SESSION['name'] ?? 'Guest';
 
 ?>
 
