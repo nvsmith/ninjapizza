@@ -21,6 +21,10 @@
 
   // sessions: persist data across pages
   if (isset($_POST['submit'])) {
+    // cookie named 'gender' set to the gender selection from $_POST
+    // expire after 1 day (86400 seconds)
+    setcookie('gender', $_POST['gender'], time() + 86400);
+
     session_start();
 
     $_SESSION['name'] = $_POST['name'];
@@ -44,6 +48,13 @@
 
     <form class="" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
       <input type="" name="name" value="">
+
+      <select class="" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
       <input type="submit" name="submit" value="Submit">
 
     </form>
